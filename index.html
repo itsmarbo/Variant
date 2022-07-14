@@ -67,11 +67,8 @@
                         <div class="row">
                             <div class="col-12 selector">
                                 <div class="container">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="aaRadio" checked>
-                                        <label class="form-check-label" for="aaRadio">
-                                            <span class="fa-solid fa-barcode"></span>
-                                            <b>Amino Acid</b>
+                                    
+                                            <b>1. Select the initial amino acid</b>
                                         </label>
                                     </div>
                                     
@@ -81,11 +78,31 @@
                             <div class="col-12 aa">
                                 <div class="container">
                                     <div class="col-12">
-                                        <div class="container secuencia">
-                                            <span class="aaCode" v-for="(item, index) in aaSequence" :id="index" :class="[ aa == index ? 'highlight' : 'blocklight' ]">{{item}}</span>
-                                        </div>        
+                                        <nav class="navbar navbar-expand-lg bg-light">
+                                            <div class="container-fluid">
+                                              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo" aria-expanded="false" aria-label="Toggle">
+                                                <span class="navbar-toggler-icon"></span>
+                                              </button>
+                                              <a class="navbar-brand" href="#">Run Model</a>
+                                              <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+                                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                                  <li class="nav-item">
+                                                    <a class="nav-link disabled">Write the mutation e.g. K4N</a>
+                                                  </li>
+                                                </ul>
+                                                <form class="d-flex" role="search">
+                                                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                                  <button class="btn btn-outline-success" type="submit">Search</button>
+                                                </form>
+                                              </div>
+                                            </div>
+                                          </nav>
+                            <div>
+                                <h3>Additional Features</h3>
+                                    <p><b>2. Aminoacid molecular structures</b></p>
+                            </div>                
                                         <div class="slider">
-                                            <label for="slideForAA" class="form-label">Select Amino Acid</label>
+                                            <label for="slideForAA" class="form-label">Move the bar to select the amino acid</label>
                                             <input type="range" class="form-range" min="0" max="114" id="slideForAA" v-model="aa" :disabled="isDisabled">
                                         </div>
                                         <div class="aacode">
