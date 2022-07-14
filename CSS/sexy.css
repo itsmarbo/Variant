@@ -1,0 +1,113 @@
+h1 {
+    text-align: center;
+}
+
+h3 {
+    color: #0d6efd;
+}
+
+body {
+    background: #fdfdfd;
+}
+
+.subtitle {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.principal {
+    margin-top: 5%;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.secundario {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background: #FFFFFF;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #959595;
+}
+
+.instrucciones {
+    text-align: justify;
+}
+
+.secuencia {
+    text-align: justify;
+    background: #e2e2e2;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.aaCode {
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    display: inline-block;
+}
+
+.highlight {
+    background-color: #700000;
+    color: #FFFFFF;
+}
+
+.blocklight {
+    background-color: none;
+    color: black;
+}
+
+.slider {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.selector {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.aaOpts {
+    text-align: left;
+}
+
+.aaOpt label {
+    width: 2.5em;
+}
+
+.bild {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.img {
+    display: inline-block;
+    text-align: center;
+    width: 110px;
+    height: 275px;
+}
+
+.run {
+    width: 100%;
+}
+
+.third {
+    text-align: center;
+}
+
+.spinning {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+}
+
+.spinning img {
+    width: 100%;
+}
