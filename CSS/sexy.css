@@ -67,6 +67,30 @@ body {
     padding-bottom: 1em;
 }
 
+.aacontenedor {
+    text-align: left;
+    width: 100%;
+    margin: auto;
+}
+
+.aalateral {
+    width: 45%;
+    background-color: #CCCCCC;
+    float: rigth;
+}
+
+.aaprincipal {
+    width: 75%;
+    float: left;
+    background-color: #CCCCCC;
+    border:#000000 1px solid;
+}
+
+.aaclearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 .selector {
     margin-top: 1em;
     margin-bottom: 1em;

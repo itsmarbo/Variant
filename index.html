@@ -64,48 +64,50 @@
                     </div>
                 </div>
                 <h3>Mutation predictor</h3> <!-- Parametros para el modelo -->
-                <div class="row">
-                    <div class="col-lg-6 col-12">
-                        <div class="row">
-                            <div class="col-12 selector">
-                                <div class="container">
-                                    
-                                            <b>1. Type the mutation</b>
-                                        </label>
-                                    </div>
-                                    
-                                    </div>
-                                </div>
+                    <p>You have two options to determine the missense mutation: </p>
+                        <p><b>1.</b> A change in the <strong>aminoacid</strong> (a.a)</p>
+                        <p><b>2.</b> A change in the <strong>nucleotide</strong> (DNA)</p>
+                    <hr>
+            <div id="aacontenedor" class="aaclearfix"></div> <!--Aminoacids container 1-->
+                <div id="aalateral"><!--Try 0 to use css-->
+                        <div class="textBased">
+                            <h4>Aminoacids</h4>
+                                <p><b>1. A change in one aminoacid</b></p>
+                            <div class="row">
+                                <span>Write the mutation considering the following forula:<br></span>
+                                    <b>AMINOACID 1</b> + position's number + <b>AMINOACID 2 <br></b> </span>
+                                <span>e.g. <b>V</b>46<b>G</b></span>
                             </div>
-                            <div class="col-12 aa">
-                                <div class="container">
-                                    <div class="col-12">
-                                        <nav class="navbar navbar-expand-lg bg-light">
-                                            <div class="container-fluid">
-                                              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo" aria-controls="navbarTogglerDemo" aria-expanded="false" aria-label="Toggle">
-                                                <span class="navbar-toggler-icon"></span>
-                                              </button>
-                                              <a class="navbar-brand" href="#">Run Model</a> <!-- Search bar-->
-                                              <div class="collapse navbar-collapse" id="navbarTogglerDemo">
-                                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                                  <li class="nav-item">
-                                                    <a class="nav-link disabled">Write the mutation using <b>CAPITAL LETTERS</b> e.g. K4N</a>
-                                                  </li>
-                                                </ul>
-                                                <form class="d-flex" role="search">
-                                                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                                  <button class="btn btn-outline-success" type="submit">Search</button>
-                                                </form>
-                                              </div>
-                                            </div>
-                                          </nav>
+                                <div class="col-6">
+                                    <input type="text" name="mutate" v-model="mutCode" :disabled="isDisabled">
+                                </div>
+                        </div>    
+                                
+                </div>                         
                                           <hr/>
                                         <div>
-                                                <div class="alert alert-warning" role="alert">
-                                                    Double check! The aminoacids must be written in <b>one capital</b> letter
+                                                <div class="alert alert-warning" role="alert"> <!--Warning for the aa-->
+                                                    Double check! Aminoacids must be written in <b>one capital</b> letter
                                                 </div>
                                         </div>
                             <div>
+                        <div class="textBased">
+                            <h4>Nucleotides</h4>
+                                <p><b>2. A change in one nucleotide</b></p>
+                            <div class="row">
+                                <div class="col-6 description">
+                                    <span>Write the mutation considering the following formula:<br></span>
+                                        <b>NUCLEOTIDE 1</b> + position's number + <b>NUCLEOTIDE 2 <br></b> </span>
+                                    <span>e.g. <b>T</b>303<b>G</b></span>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" name="mutate" id="mutate" v-model="mutCode" :disabled="isDisabled">
+                                </div>
+                            </div>
+                            <br>
+                            <button class="btn btn-primary run" type="button" v-on:click="run()" :disabled="isDisabled">Run Model</button>
+                        </div>
+                <div id="aaprincipal"><!--Try 1 to use css-->                
                                 <h3>Additional Features</h3>
                                     <p><b>2. Aminoacid molecular structures</b></p>
                             </div>                
@@ -113,7 +115,7 @@
                                             <label for="slideForAA" class="form-label">Move the bar to select the amino acid</label>
                                             <input type="range" class="form-range" min="0" max="114" id="slideForAA" v-model="aa" :disabled="isDisabled">
                                         </div>
-                                        <div class="aacode">
+                                        <div class="aacode"> <!--Try 2 to use css-->
                                             <div class="btn-group" role="group" aria-label="Mutation selection">
                                                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                                                     <div class="row aaOpts">
@@ -149,6 +151,7 @@
                                 {{aaMut[sel][0]}}
                             </div>
                         </div>
+                    </div> <!--End of principal container-->            
                         <br>
                         <button class="btn btn-primary run" type="button" v-on:click="run()" :disabled="isDisabled">Run Model</button>
                         <div v-if="third" class="container third">
@@ -159,7 +162,6 @@
                     </div>
                 </div>
             </div>
-
             <progress min="0" max="100" value="35"></progress>
         </div>
     </div>
