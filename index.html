@@ -21,83 +21,76 @@
         <!-- Barra de navegacion -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-            <a class="navbar-brand" href="#">MutaGen Kv7.2</a> <!-- Nombre -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span> <!-- Hamburguesa -->
-            </button>
-            <div class="collapse navbar-collapse" id="navbarToggler">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0"> <!-- Opciones -->
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                </ul>
-            </div>
+                <a class="navbar-brand" href="#">MutaGen Kv7.2</a> <!-- Nombre -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span> <!-- Hamburguesa -->
+                </button>
+                <div class="collapse navbar-collapse" id="navbarToggler">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0"> <!-- Opciones -->
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
-        
+
         <div class="container principal">
             <!-- Titulo principal -->
             <h1>MutaGen Kv7.2</h1>
             <p class="subtitle">A free machine learning web service to predict pathogenicity of missense variants in Kv7.2 channels</p>
 
-            <hr />
-            
+            <hr>
+
             <div class="container secundario">
                 <div class="col-12">
                     <div class="container"> <!-- Descripcion de la aplicacion -->
                         <h3>About</h3>
-                        <p class="instrucciones">
-                         MutaGen stands for <b>MUT</b>ations in <b>GEN</b>s, more specifically missence mutations in KV7.2 channel. The purpose is to provide the probability of these mutations, making a timely detection and increasing the anticipation of abnormal situations.
-                        </p>
-                        
-                        <h3>How to ...</h3>
-                        <p class="instrucciones">
-                           To run the analysis you need to provide the mutation using three principal components: the initial aminoacid, the position (number) and the final aminoacid.
-                         <p>Note that all the aminoacids must be written in <b>one capital</b> letter.</p>
+                        <p class="instrucciones">MutaGen stands for <b>MUT</b>ations in <b>GEN</b>s, more specifically missence mutations in KV7.2 channel. The purpose is to provide the probability of these mutations, making a timely detection and increasing the anticipation of abnormal situations.</p>
 
-                           <p>Run the Model!</p>
-                            
-                        </p>
+                        <h3>How to ...</h3>
+                        <p class="instrucciones">To run the analysis you need to provide the mutation using three principal components: the initial aminoacid, the position (number) and the final aminoacid.</p>
+                        <p>Note that all the aminoacids must be written in <b>one capital</b> letter.</p>
+                        <p>Run the Model!</p>
                     </div>
                 </div>
                 <h3>Mutation predictor</h3> <!-- Parametros para el modelo -->
-                    <p>You have two options to determine the missense mutation: </p>
-                        <p><b>1.</b> A change in the <strong>aminoacid</strong> (a.a)</p>
-                        <p><b>2.</b> A change in the <strong>nucleotide</strong> (DNA)</p>
-                    <hr>
-            <div id="aacontenedor" class="aaclearfix"></div> <!--Aminoacids container 1-->
-                <div id="aalateral"><!--Try 0 to use css-->
+                <p>You have two options to determine the missense mutation:</p>
+                <p><b>1.</b> A change in the <b>aminoacid</b> (a.a)</p>
+                <p><b>2.</b> A change in the <b>nucleotide</b> (DNA)</p>
+                <hr>
+                <div id="aacontenedor" class="aaclearfix"> <!--Aminoacids container 1-->
+                    <div id="aalateral"><!--Try 0 to use css-->
                         <div class="textBased">
                             <h4>Aminoacids</h4>
-                                <p><b>1. A change in one aminoacid</b></p>
+                            <p><b>1. A change in one aminoacid</b></p>
                             <div class="row">
-                                <span>Write the mutation considering the following forula:<br></span>
-                                    <b>AMINOACID 1</b> + position's number + <b>AMINOACID 2 <br></b> </span>
+                                <span>Write the mutation considering the following forula:</span><br>
+                                <b>AMINOACID 1</b> + position's number + <b>AMINOACID 2</b></span><br>
                                 <span>e.g. <b>V</b>46<b>G</b></span>
                             </div>
-                                <div class="col-6">
-                                    <input type="text" name="mutate" v-model="mutCode" :disabled="isDisabled">
-                                </div>
+                            <div class="col-6">
+                                <input type="text" name="mutate" v-model="mutCode" :disabled="isDisabled">
+                            </div>
                         </div>    
-                                
-                </div>                         
-                                          <hr/>
-                                        <div>
-                                                <div class="alert alert-warning" role="alert"> <!--Warning for the aa-->
-                                                    Double check! Aminoacids must be written in <b>one capital</b> letter
-                                                </div>
-                                        </div>
-                            <div>
+                    </div>                         
+                    <hr>
+                    <div>
+                        <div class="alert alert-warning" role="alert"> <!--Warning for the aa-->
+                        Double check! Aminoacids must be written in <b>one capital</b> letter
+                        </div>
+                    </div>
+                    <div>
                         <div class="textBased">
                             <h4>Nucleotides</h4>
-                                <p><b>2. A change in one nucleotide</b></p>
+                            <p><b>2. A change in one nucleotide</b></p>
                             <div class="row">
                                 <div class="col-6 description">
                                     <span>Write the mutation considering the following formula:<br></span>
-                                        <b>NUCLEOTIDE 1</b> + position's number + <b>NUCLEOTIDE 2 <br></b> </span>
+                                    <b>NUCLEOTIDE 1</b> + position's number + <b>NUCLEOTIDE 2 <br></b> </span>
                                     <span>e.g. <b>T</b>303<b>G</b></span>
                                 </div>
                                 <div class="col-6">
@@ -107,62 +100,56 @@
                             <br>
                             <button class="btn btn-primary run" type="button" v-on:click="run()" :disabled="isDisabled">Run Model</button>
                         </div>
-                <div id="aaprincipal"><!--Try 1 to use css-->                
-                                <h3>Additional Features</h3>
-                                    <p><b>2. Aminoacid molecular structures</b></p>
-                            </div>                
-                                        <div class="slider">
-                                            <label for="slideForAA" class="form-label">Move the bar to select the amino acid</label>
-                                            <input type="range" class="form-range" min="0" max="114" id="slideForAA" v-model="aa" :disabled="isDisabled">
-                                        </div>
-                                        <div class="aacode"> <!--Try 2 to use css-->
-                                            <div class="btn-group" role="group" aria-label="Mutation selection">
-                                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                    <div class="row aaOpts">
-                                                        <div class="col aaOpt" v-for="(value, name, index) in aaMut">
-                                                            <input type="radio" class="btn-check" name="btnradio" :id="'btnradio' + index" autocomplete="off" :disabled="isDisabled">
-                                                            <label class="btn btn-outline-primary" :for="'btnradio' + index" :title="value[0]" v-on:click="onAA(name)">{{name}}</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                        <div id="aaprincipal"><!--Try 1 to use css-->                
+                            <h3>Additional Features</h3>
+                            <p><b>2. Aminoacid molecular structures</b></p>
+                        </div>                
+                        <div class="slider">
+                            <label for="slideForAA" class="form-label">Move the bar to select the amino acid</label>
+                            <input type="range" class="form-range" min="0" max="114" id="slideForAA" v-model="aa" :disabled="isDisabled">
+                        </div>
+                        <div class="aacode"> <!--Try 2 to use css-->
+                            <div class="btn-group" role="group" aria-label="Mutation selection">
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <div class="row aaOpts">
+                                        <div class="col aaOpt" v-for="(value, name, index) in aaMut">
+                                            <input type="radio" class="btn-check" name="btnradio" :id="'btnradio' + index" autocomplete="off" :disabled="isDisabled">
+                                            <label class="btn btn-outline-primary" :for="'btnradio' + index" :title="value[0]" v-on:click="onAA(name)">{{name}}</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-12">
-                        <div class="row">
-                            <div class="col-md-6 col-12 bild">
-                                <div class="img">
-                                    <h4>Old AA</h4>
-                                    <img :src="'IMG/' + aaMut[aaSequence[aa]][1]" :alt="aaMut[aaSequence[aa]][0]">
-                                </div>
-                                <br>
-                                {{aaMut[aaSequence[aa]][0]}}
-                            </div>
-                            <div class="col-md-6 col-12 bild">
-                                <div class="img">
-                                    <h4>New AA</h4>
-                                    <img :src="'IMG/' + image2" :alt="aaMut[sel][0]">
-                                </div>
-                                <br>
-                                {{aaMut[sel][0]}}
-                            </div>
-                        </div>
-                    </div> <!--End of principal container-->            
-                        <br>
-                        <button class="btn btn-primary run" type="button" v-on:click="run()" :disabled="isDisabled">Run Model</button>
-                        <div v-if="third" class="container third">
-                            <div class="spinning">
-                                <img src="IMG/spinner.gif" alt="Just hold a little longer ...">
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
-            <progress min="0" max="100" value="35"></progress>
+        </div>
+        <div class="col-lg-6 col-12">
+            <div class="row">
+                <div class="col-md-6 col-12 bild">
+                    <div class="img">
+                        <h4>Old AA</h4>
+                        <img :src="'IMG/' + aaMut[aaSequence[aa]][1]" :alt="aaMut[aaSequence[aa]][0]">
+                    </div>
+                    <br>
+                    {{aaMut[aaSequence[aa]][0]}}
+                </div>
+                <div class="col-md-6 col-12 bild">
+                    <div class="img">
+                        <h4>New AA</h4>
+                        <img :src="'IMG/' + image2" :alt="aaMut[sel][0]">
+                    </div>
+                    <br>
+                    {{aaMut[sel][0]}}
+                </div>
+            </div>
+        </div> <!--End of principal container-->            
+        <br>
+        <button class="btn btn-primary run" type="button" v-on:click="run()" :disabled="isDisabled">Run Model</button>
+        <div v-if="third" class="container third">
+            <div class="spinning">
+                <img src="IMG/spinner.gif" alt="Just hold a little longer ...">
+            </div>
         </div>
     </div>
     <script src="JS/action.js"></script>

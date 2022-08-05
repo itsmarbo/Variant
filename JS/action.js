@@ -2,6 +2,7 @@ const { createApp } = Vue
   createApp({
     data() {
       return {
+        mutCode: "",
         third: false,
         fourth: false,
         isDisabled: false,
